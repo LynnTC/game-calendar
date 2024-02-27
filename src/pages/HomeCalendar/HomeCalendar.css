@@ -1,0 +1,21 @@
+.Calendar {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    gap: 1vmin;
+  }
+  
+  .Calendar > header {
+    grid-column: span 7;
+    justify-content: space-between;
+  }
+  
+  .Calendar > .dow {
+    height: 8vmin;
+    width: 8vmin;
+  }
+  
+  .Calendar > header > span:first-child,
+  .Calendar > header > span:last-child {
+    cursor: pointer;
+  }
+  

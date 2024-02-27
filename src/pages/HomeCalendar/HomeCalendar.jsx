@@ -1,5 +1,62 @@
-export default function HomeCalendar() {
+import { useState } from 'react';
+import './HomeCalendar.css';
+import CalDay from '../../components/CalDay/CalDay';
+
+const MO_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+export default function Calendar({ tasks }) {
+    const today = new Date(new Date().setHours(0, 0, 0, 0));
+    const [calMo, setCalMo] = useState(today.getMonth());
+    const [calYr, setCalYr] = useState(today.getFullYear());
+    const numCalDays = new Date(calYr, calMo + 1, 0).getDate();
+  
+    const calDays = new Array(numCalDays).fill().map((_, idx) => {
+      const date = new Date(calYr, calMo, idx + 1);
+      return (
+        <CalDay
+          date={date}
+          isToday={today.valueOf() === date.valueOf()}
+          tasks={tasks}
+          key={date}
+        />
+      );
+    });
+  
+    function handlePrevMo() {
+      if (calMo === 0) {
+        setCalMo(11);
+        setCalYr(calYr - 1);
+      } else {
+        setCalMo(calMo - 1);
+      }
+    }
+  
+    function handleNextMo() {
+      if (calMo === 11) {
+        setCalMo(0);
+        setCalYr(calYr + 1);
+      } else {
+        setCalMo(calMo + 1);
+      }
+    }
+
     return (
-      <h1>Home Calendar</h1>
-    );
-  }
+        <section className="Calendar">
+          <header className="flex-ctr-ctr">
+            <span onClick={handlePrevMo}>&#x21e6;</span>
+            <span>
+              {MO_NAMES[calMo]}, {calYr}
+            </span>
+            <span onClick={handleNextMo}>&#x21e8;</span>
+          </header>
+          <div className="flex-ctr-ctr">Sunday</div>
+          <div className="flex-ctr-ctr">Monday</div>
+          <div className="flex-ctr-ctr">Tuesday</div>
+          <div className="flex-ctr-ctr">Wednesday</div>
+          <div className="flex-ctr-ctr">Thursday</div>
+          <div className="flex-ctr-ctr">Friday</div>
+          <div className="flex-ctr-ctr">Saturday</div>
+          {calDays}
+        </section>
+      );
+    }
