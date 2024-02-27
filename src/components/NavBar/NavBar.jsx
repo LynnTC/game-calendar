@@ -13,8 +13,14 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to="/calendar/user">Personal Calendar</Link>
       &nbsp;&nbsp;
-      <span>Welcome, {user.name}</span>
-      &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+      {user ? (
+        <>
+          <span>Welcome, {user.name}</span>
+          &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+        </>
+      ) : (
+        <Link to="/login">Log In or Sign Up</Link>
+      )}
     </nav>
   );
 }

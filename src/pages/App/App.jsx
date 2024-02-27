@@ -7,22 +7,21 @@ import NavBar from '../../components/NavBar/NavBar';
 import HomeCalendar from '../HomeCalendar/HomeCalendar';
 import UserCalendar from '../UserCalendar/UserCalendar';
 
+
 export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
     <main className="App">
-      { user ?
-          <>
-            <NavBar user={user} setUser={setUser} />
-            <Routes>
-              {/* Route components in here */}
-              <Route path="/calendar/users" element={<UserCalendar />} />
-            </Routes>
-          </>
-          :
-            <HomeCalendar />
-      }
+      <>
+        <NavBar user={user} setUser={setUser} />
+        <Routes>
+          {/* Route components in here */}
+          <Route path="/calendar/users" element={<UserCalendar />} />
+          <Route path="/login" element={<AuthPage />} />
+        </Routes>
+      </>
+        <HomeCalendar />
     </main>
   );
 }
