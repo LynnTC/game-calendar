@@ -7,6 +7,6 @@
   }
   
   .CalDay.today {
-    border: 0.5vmin solid pink;
+    border: 0.5vmin solid rgb(230, 18, 53);
   }
   

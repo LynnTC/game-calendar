@@ -5,7 +5,7 @@ export default function CalDay({ date, isToday, tasks }) {
     alert(date);
   }
 
-  const manana = new Date(
+  const Cal = new Date(
     date.getFullYear(),
     date.getMonth(),
     date.getDate() + 1
@@ -14,8 +14,12 @@ export default function CalDay({ date, isToday, tasks }) {
   return (
     <article
       className={`CalDay${isToday ? ' today' : ''}`}
-      style={{ gridColumnStart: date.getDate() === 1 && date.getDay() + 1 }}
+      style={{ gridColumnStart: date.getDate() === 1 && date.getDay() + 1, position: 'relative'}}
       onClick={() => handleDayClick(date)}
-    ></article>
+    >
+      <span style={{ position: 'absolute', top: 0, left: 10 }}>
+        {date.getDate()}
+      </span>
+    </article>
   );
 }

@@ -19,7 +19,7 @@ export default function App() {
           {/* Route components in here */}
           <Route path="/" element={<HomeCalendar />} />
           <Route path="/calendar/users" element={<UserCalendar />} />
-          <Route path="/login" element={<AuthPage />} />
+          <Route path="/login" element={<AuthPage setUser={setUser}/>} />
         </Routes>
       </>
     </main>
