@@ -8,19 +8,6 @@ export default function Calendar({ tasks }) {
     const today = new Date(new Date().setHours(0, 0, 0, 0));
     const [calMo, setCalMo] = useState(today.getMonth());
     const [calYr, setCalYr] = useState(today.getFullYear());
-    // const numCalDays = new Date(calYr, calMo + 1, 0).getDate();
-  
-    // const calDays = new Array(numCalDays).fill().map((_, idx) => {
-    //   const date = new Date(calYr, calMo, idx + 1);
-    //   return (
-    //     <CalDay
-    //       date={date}
-    //       isToday={today.valueOf() === date.valueOf()}
-    //       tasks={tasks}
-    //       key={date}
-    //     />
-    //   );
-    // });
 
     useEffect(() => {
       async function fetchApiKey() {
@@ -30,8 +17,10 @@ export default function Calendar({ tasks }) {
             throw new Error(`Failed to fetch API key. Status: ${response.status}`);
           }
           const { apiKey } = await response.json();
+          const startDate = new Date(calYr, calMo, 1).toISOString().split('T')[0];
+          const endDate = new Date(calYr, calMo + 1, 0).toISOString().split('T')[0];
     
-          const gameResponse = await fetch(`https://rawg.io/api/games?key=${apiKey}&dates=2024-02-01,2024-02-29`);
+          const gameResponse = await fetch(`https://rawg.io/api/games?key=${apiKey}&dates=${startDate},${endDate}`);
           if (!gameResponse.ok) {
             throw new Error(`Failed to fetch game data. Status: ${gameResponse.status}`);
           }
@@ -43,7 +32,7 @@ export default function Calendar({ tasks }) {
       }
     
       fetchApiKey();
-    }, []);
+    }, [calMo, calYr]);
   
     const numCalDays = new Date(calYr, calMo + 1, 0).getDate();
     
