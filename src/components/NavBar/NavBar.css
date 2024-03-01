@@ -1,0 +1,70 @@
+/* NavBar.css */
+
+nav {
+    height: 5vmin;
+    background-color: #85edb9;
+    border-radius: 1vmin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vmin; 
+  }
+  
+  nav .left-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .left-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5vmin; 
+  }
+  
+  nav .right-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .right-links span {
+    margin-right: 10px;
+    font-size: 1.5vmin; 
+  }
+  
+  nav .right-links a.logout:hover,
+  nav .right-links a.logout:active {
+    text-decoration: underline;
+    color: #cc4444;
+  }
+  nav .left-links a:hover,
+  nav .left-links a:active {
+    text-decoration: underline;
+    color: #cc4444;
+  }
+
+
+  /*description: good for images. Effect of a dying flickering screen. Sometimes bright, sometimes dark.*/
+.cyber-glitch-0
+{
+    animation: cyber-glitch-0 10s linear infinite;
+}
+
+
+@keyframes cyber-glitch-0
+{
+    0% {filter: blur(0) brightness(100%) contrast(100%);}
+    1% {filter: blur(.05rem) brightness(120%) contrast(120%);}
+    2% {filter: blur(.10rem) brightness(150%) contrast(150%);}
+    3% {filter: blur(.20rem) brightness(170%) contrast(170%);}
+    4% {filter: blur(0) brightness(100%) contrast(100%);}
+    5% {filter: blur(0) brightness(100%) contrast(100%);}
+    30% {filter: blur(0) brightness(100%) contrast(100%);}
+    31% {filter: blur(.05rem) brightness(60%) contrast(100%);}
+    32% {filter: blur(.10rem) brightness(40%) contrast(100%);}
+    33% {filter: blur(0) brightness(100%) contrast(100%);}
+    34% {filter: blur(.05rem) brightness(60%) contrast(100%);}
+    35% {filter: blur(.10rem) brightness(40%) contrast(100%);}
+    36% {filter: blur(0) brightness(100%) contrast(100%);}
+    100% {filter: blur(0) brightness(100%) contrast(100%);}
+}

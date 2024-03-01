@@ -1,12 +1,13 @@
 .CalDay {
     height: 12vmin;
-    background-color: rgb(255, 217, 222);
+    background-color: #3d898d;
     border-radius: 1vmin;
     grid-template-columns: repeat(7, auto);
     gap: 1vmin;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
   }
   
   .CalDay.today {
-    border: 0.5vmin solid rgb(230, 18, 53);
+    border: 0.5vmin solid #e2dddf;
   }
   

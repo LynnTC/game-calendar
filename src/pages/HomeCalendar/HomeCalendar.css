@@ -1,21 +1,25 @@
 .Calendar {
-    display: grid;
-    grid-template-columns: repeat(7, auto);
-    gap: 1vmin;
-  }
-  
-  .Calendar > header {
-    grid-column: span 7;
-    justify-content: space-between;
-  }
-  
-  .Calendar > .dow {
-    height: 8vmin;
-    width: 8vmin;
-  }
-  
-  .Calendar > header > span:first-child,
-  .Calendar > header > span:last-child {
-    cursor: pointer;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1vmin;
+}
+
+.Calendar > header {
+  grid-column: span 7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Calendar > header > span {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Calendar > .dow {
+  height: 8vmin;
+  width: 8vmin;
+  text-align: center;
+  line-height: 8vmin;
+}
