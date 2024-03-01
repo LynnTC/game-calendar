@@ -70,7 +70,6 @@ export default function UserCalendar({ tasks }) {
       <div className="flex-ctr-ctr">Fr</div>
       <div className="flex-ctr-ctr">Sa</div>
       {calDays}
-      {console.log('calDays:', calDays)}
     </section>
   );
 }
