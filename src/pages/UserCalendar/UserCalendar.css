@@ -1,0 +1,25 @@
+.UserCalendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1vmin;
+  }
+  
+  .UserCalendar > header {
+    grid-column: span 7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .UserCalendar > header > span {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .UserCalendar > .dow {
+    height: 8vmin;
+    width: 8vmin;
+    text-align: center;
+    line-height: 8vmin;
+  }

@@ -1,0 +1,13 @@
+.UserCalDay {
+    height: 12vmin;
+    background-color: #3d898d;
+    border-radius: 1vmin;
+    grid-template-columns: repeat(7, auto);
+    gap: 1vmin;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+  }
+  
+  .UserCalDay.today {
+    border: 0.5vmin solid #e2dddf;
+  }
+  
