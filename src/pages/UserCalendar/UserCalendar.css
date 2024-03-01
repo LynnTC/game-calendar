@@ -23,3 +23,16 @@
     text-align: center;
     line-height: 8vmin;
   }
+
+  .UserCalendar > footer {
+    grid-column: span 7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .UserCalendar > footer > span {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+  }

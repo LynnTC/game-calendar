@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './UserCalendar.css';
 import UserCalDay from '../../components/UserCalDay/UserCalDay'
+import GameForm from '../../components/GameForm/GameForm';
 
 const MO_NAMES = [
   'January',
@@ -70,6 +72,9 @@ export default function UserCalendar({ tasks }) {
       <div className="flex-ctr-ctr">Fr</div>
       <div className="flex-ctr-ctr">Sa</div>
       {calDays}
+      <footer>
+        <Link to="/gameform">Add Game To Your Calendar</Link>
+      </footer>
     </section>
   );
 }

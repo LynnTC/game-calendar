@@ -13,7 +13,13 @@ export default function NavBar({ user, setUser }) {
       <div className="left-links">
         <Link to="/">Home</Link>
         &nbsp;&nbsp;
-        <Link to="/calendar">Personal Calendar</Link>
+        {user ? (
+          <>
+            <Link to="/calendar">Personal Calendar</Link>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="right-links">
         {user ? (

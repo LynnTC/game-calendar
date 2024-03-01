@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import HomeCalendar from '../HomeCalendar/HomeCalendar';
 import UserCalendar from '../UserCalendar/UserCalendar';
+import GameForm from '../../components/GameForm/GameForm';
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/" element={<HomeCalendar />} />
           <Route path="/calendar" element={<UserCalendar />} />
           <Route path="/login" element={<AuthPage setUser={setUser}/>} />
+          <Route path="/gameform" element={<GameForm />} />
         </Routes>
       </>
     </main>
