@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { redirect } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import "./GameForm.css"
 import * as gamesAPI from '../../utilities/games-api';
@@ -9,23 +10,17 @@ export default function GameForm({}) {
     description: '',
     releaseDate: '',
     useUpload: false,
-    backgroundImage: '',
+    background: {
+      url: '',
+      file: '',
+    },
   });
-
-  const handleCreateGame = async () => {
-    try {
-      const createdGame = await gamesAPI.createGame(Game);
-      console.log('Game created:', createdGame);
-    } catch (error) {
-      console.error('Error creating game:', error);
-    }
-  };
 
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {
       const createdGame = await gamesAPI.createGame(Game);
-      handleCreateGame(createdGame);
+      return redirect('/calendar');
     } catch (error) {
       console.error('Error creating game:', error);
     }
@@ -38,7 +33,10 @@ export default function GameForm({}) {
   function handleChange(evt) {
     const { name, value, type, checked } = evt.target;
     if (type === 'checkbox') {
-      setGame({ ...Game, [name]: checked });
+      setGame({ ...Game, [name]: checked, background: { url: '', file: '' } });
+    } else if (name === 'background') {
+      // Handle background separately
+      setGame({ ...Game, background: { ...Game.background, url: value } });
     } else {
       setGame({ ...Game, [name]: value });
     }
@@ -77,7 +75,7 @@ export default function GameForm({}) {
 
       <div>
         <label>
-          Use Background Image URL
+          Upload Background Image?
           <input
             type="checkbox"
             name="useUpload"
@@ -92,18 +90,18 @@ export default function GameForm({}) {
           <label>Upload Background Image</label>
           <input
             type="file"
-            name="backgroundImage"
+            name="background"
             onChange={handleChange}
             accept="image/*"
           />
         </div>
       ) : (
         <div>
-          <label>Background Image URL</label>
+          <label>Background URL</label>
           <input
             type="text"
-            name="backgroundImage"
-            value={Game.backgroundImage}
+            name="background"
+            value={Game.background.url}
             onChange={handleChange}
             placeholder="Enter image URL"
           />
