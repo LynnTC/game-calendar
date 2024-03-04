@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './UserCalendar.css';
 import UserCalDay from '../../components/UserCalDay/UserCalDay'
-import GameForm from '../../components/GameForm/GameForm';
 
 const MO_NAMES = [
   'January',
