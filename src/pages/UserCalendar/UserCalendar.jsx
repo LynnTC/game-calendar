@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import * as gamesAPI from '../../utilities/games-api';
 import './UserCalendar.css';
 import UserCalDay from '../../components/UserCalDay/UserCalDay'
 
@@ -23,6 +24,17 @@ export default function UserCalendar({ tasks }) {
   const [calMo, setCalMo] = useState(today.getMonth());
   const [calYr, setCalYr] = useState(today.getFullYear());
   const numCalDays = new Date(calYr, calMo + 1, 0).getDate();
+  const [games, setGames] = useState([]);
+
+  
+  useEffect(() => {
+    async function userGames(Game) {
+        const game = await gamesAPI.getAll();
+        setGames([...games, game]);
+        console.log(game)
+      }
+    userGames();
+  }, []);
 
   const calDays = new Array(numCalDays).fill().map((_, idx) => {
     const date = new Date(calYr, calMo, idx + 1);
@@ -32,6 +44,7 @@ export default function UserCalendar({ tasks }) {
         isToday={today.valueOf() === date.valueOf()}
         tasks={tasks}
         key={date}
+        games={games}
       />
     );
   });

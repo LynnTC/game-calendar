@@ -1,15 +1,11 @@
 import React from 'react';
 import './CalDay.css';
 
-export default function CalDay({ date, isToday, tasks, gameData }) {
-  console.log('Tasks Prop in CalDay:', tasks);
+export default function CalDay({ date, isToday, gameData }) {
   function handleDayClick(date) {
     alert(date);
   }
 
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
 
   const releaseData = gameData && gameData.results
     ? gameData.results.find((result) => {

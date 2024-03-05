@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 import "./GameForm.css"
 import * as gamesAPI from '../../utilities/games-api';
 
-export default function GameForm({}) {
+export default function GameForm() {
   const [Game, setGame] = useState({
     name: '',
     description: '',
@@ -19,7 +19,7 @@ export default function GameForm({}) {
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {
-      const createdGame = await gamesAPI.createGame(Game);
+      await gamesAPI.createGame(Game);
       return redirect('/calendar');
     } catch (error) {
       console.error('Error creating game:', error);
@@ -27,7 +27,8 @@ export default function GameForm({}) {
   }
 
   const handleDateChange = (date) => {
-    setGame({ ...Game, releaseDate: date });
+    const formattedDate = date.toISOString().split('T')[0];
+    setGame({ ...Game, releaseDate: formattedDate });
   };
 
   function handleChange(evt) {

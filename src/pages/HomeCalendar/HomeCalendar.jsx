@@ -10,31 +10,31 @@ export default function Calendar({ tasks }) {
   const [calYr, setCalYr] = useState(today.getFullYear());
   const [gameData, setGameData] = useState(null)
 
-  // useEffect(() => {
-  //   async function fetchApiKey() {
-  //     try {
-  //       const response = await fetch('/api/gameApiKey');
-  //       if (!response.ok) {
-  //         throw new Error(`Failed to fetch API key. Status: ${response.status}`);
-  //       }
-  //       const { apiKey } = await response.json();
-  //       const startDate = new Date(calYr, calMo, 1).toISOString().split('T')[0];
-  //       const endDate = new Date(calYr, calMo + 1, 0).toISOString().split('T')[0];
+  useEffect(() => {
+    async function fetchApiKey() {
+      try {
+        const response = await fetch('/api/gameApiKey');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch API key. Status: ${response.status}`);
+        }
+        const { apiKey } = await response.json();
+        const startDate = new Date(calYr, calMo, 1).toISOString().split('T')[0];
+        const endDate = new Date(calYr, calMo + 1, 0).toISOString().split('T')[0];
 
-  //       const gameResponse = await fetch(`https://rawg.io/api/games?key=${apiKey}&dates=${startDate},${endDate}`);
-  //       if (!gameResponse.ok) {
-  //         throw new Error(`Failed to fetch game data. Status: ${gameResponse.status}`);
-  //       }
-  //       const gameData = await gameResponse.json();
-  //       setGameData(gameData);
-  //       console.log(gameData);
-  //     } catch (error) {
-  //       console.error('Error:', error);
-  //     }
-  //   }
+        const gameResponse = await fetch(`https://rawg.io/api/games?key=${apiKey}&dates=${startDate},${endDate}`);
+        if (!gameResponse.ok) {
+          throw new Error(`Failed to fetch game data. Status: ${gameResponse.status}`);
+        }
+        const gameData = await gameResponse.json();
+        setGameData(gameData);
+        console.log(gameData);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
 
-  //   fetchApiKey();
-  // }, [calMo, calYr]);
+    fetchApiKey();
+  }, [calMo, calYr]);
 
   const numCalDays = new Date(calYr, calMo + 1, 0).getDate();
 

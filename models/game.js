@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const gameSchema = new Schema ({
     user: { type: Schema.Types.ObjectId, required: true },
     name: {type: String, required: true},
-    releaseDate: {type: Date, required: true},
+    releaseDate: {type: String, required: true},
     background: {
         url: { type: String },
         file: { type: String },
@@ -13,6 +13,4 @@ const gameSchema = new Schema ({
     description: {type: String},
 })
 
-const Game = mongoose.model('Game', gameSchema);
-
-module.exports = Game;
+module.exports = mongoose.model('Games', gameSchema)
