@@ -89,7 +89,7 @@ export default function Calendar({ tasks }) {
       <div className="flex-ctr-ctr">Saturday</div>
       {calDays}
     </section>
-    <a class="rawglink" href="https://rawg.io/" target="_blank" rel="noopener noreferrer">Information from rawg.io API</a>
+    <a className="rawglink" href="https://rawg.io/" target="_blank" rel="noopener noreferrer">Information from rawg.io API</a>
     </>
   );
 }
