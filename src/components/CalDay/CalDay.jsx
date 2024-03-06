@@ -1,8 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import * as gamesAPI from '../../utilities/games-api';
 import './CalDay.css';
 
 export default function CalDay({ date, isToday, gameData }) {
+  const [addedToCalendar, setAddedToCalendar] = useState(false);
 
   const releaseData = gameData && gameData.results
     ? gameData.results.find((result) => {
@@ -17,6 +18,7 @@ export default function CalDay({ date, isToday, gameData }) {
   const handleAddToUserCal = (evt, releaseData) =>{
     evt.stopPropagation()
     gamesAPI.addGameToUserCal(releaseData);
+    setAddedToCalendar(true);
   };
 
   return (
@@ -35,6 +37,7 @@ export default function CalDay({ date, isToday, gameData }) {
         <div className="game-info">
           <button onClick={(evt) => handleAddToUserCal(evt, releaseData)} style={{ position: 'absolute', top: 0, right: 15, fontSize: 30 }}>+</button>
           <h3>{releaseData.name}</h3>
+          {addedToCalendar && <p>{releaseData.name} added to your calendar!</p>}
         </div>
       )}
     </article>
