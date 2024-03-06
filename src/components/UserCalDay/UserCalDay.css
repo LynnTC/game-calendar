@@ -1,13 +1,20 @@
 .UserCalDay {
-    height: 12vmin;
-    background-color: #2e3135;
-    border-radius: 1vmin;
-    grid-template-columns: repeat(7, auto);
-    gap: 1vmin;
-    text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12vmin;
+  background-color: #2e3135;
+  border-radius: 1vmin;
+  text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
   }
   
   .UserCalDay.today {
     border: 0.5vmin solid #e2dddf;
   }
   
+  .UserCalDay button {
+    height: 3vmin;
+    width: 1rem;
+    margin: 0;
+    text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
+  }

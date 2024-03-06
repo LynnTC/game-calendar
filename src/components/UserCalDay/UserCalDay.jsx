@@ -1,8 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
+import * as gamesAPI from '../../utilities/games-api';
 import { useNavigate } from 'react-router-dom';
 import './UserCalDay.css';
 
 export default function CalDay({ date, isToday, games }) {
+  const [removeFromCalendar, setRemoveFromCalendar] = useState(false);
   const navigate = useNavigate();
 
   const gameData = games && games[0]
@@ -21,6 +23,12 @@ export default function CalDay({ date, isToday, games }) {
     }
   };
 
+  const handleRemoveFromUserCal = (evt, releaseData) =>{
+    evt.stopPropagation()
+    gamesAPI.removeFromUserCal(releaseData);
+    setRemoveFromCalendar(true);
+  };
+
   return (
     <article
       className={`UserCalDay${isToday ? ' today' : ''}`}
@@ -37,9 +45,15 @@ export default function CalDay({ date, isToday, games }) {
       </span>
       {gameData && (
         <div className="game-info">
+          <button onClick={(evt) => handleRemoveFromUserCal(evt, gameData)} style={{ position: 'absolute', top: 0, right: 15, fontSize: 30 }}>-</button>
           <h3>{gameData.name}</h3>
+          {removeFromCalendar && <p>{gameData.name} removed from your calendar!</p>}
         </div>
       )}
+      {/* //   <div className="game-info">
+      //     <h3>{gameData.name}</h3>
+      //   </div>
+      // )} */}
     </article>
   );
 }

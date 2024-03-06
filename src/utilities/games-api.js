@@ -16,3 +16,7 @@ export async function getGameById(gameId) {
 export async function addGameToUserCal(gameData) {
     return sendRequest(BASE_URL + "/user", 'POST', gameData );
 };
+
+export async function removeFromUserCal(gameData) {
+    return sendRequest(`${BASE_URL}/${gameData._id}`, 'DELETE', gameData );
+};

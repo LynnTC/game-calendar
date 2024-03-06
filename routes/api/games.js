@@ -11,6 +11,7 @@ router.post('/', gamesCtrl.create);
 router.post('/user', gamesCtrl.addToUserCal);
 router.get('/', gamesCtrl.getAll)
 router.get('/:gameId', gamesCtrl.getById)
+router.delete('/:gameId', gamesCtrl.delete);
 
 
 module.exports = router;

@@ -45,5 +45,7 @@ async function getById(req, res){
 }
 
 async function destroyGame(req, res){
-    console.log(hi)
+    const game = await Game.findByIdAndRemove(req.params.gameId);
+    console.log('Game ID to delete:', req.params.gameId);
+    res.json(game);
 }
