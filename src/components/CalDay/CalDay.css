@@ -1,9 +1,10 @@
 .CalDay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 12vmin;
     background-color: #3d898d;
     border-radius: 1vmin;
-    grid-template-columns: repeat(7, auto);
-    gap: 1vmin;
     text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
   }
   
@@ -11,3 +12,11 @@
     border: 0.5vmin solid #e2dddf;
   }
   
+.CalDay button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 1rem;
+  width: 1rem;
+  margin: 0;
+}

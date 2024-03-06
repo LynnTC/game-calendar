@@ -5,11 +5,6 @@ import './CalDay.css';
 
 export default function CalDay({ date, isToday, gameData }) {
   const navigate = useNavigate();
-  const handleDayClick = () => {
-    if (gameData) {
-      navigate(`/game/${gameData._id}`);
-    }
-  };
 
   const releaseData = gameData && gameData.results
     ? gameData.results.find((result) => {
@@ -34,7 +29,6 @@ export default function CalDay({ date, isToday, gameData }) {
         position: 'relative',
         backgroundImage: backgroundImage,
       }}
-      onClick={() => handleDayClick(date)}
     >
       <span style={{ position: 'absolute', top: 0, left: 10 }}>
         {date.getDate()}
