@@ -31,7 +31,6 @@ export default function UserCalendar({ tasks }) {
     async function userGames(Game) {
         const game = await gamesAPI.getAll();
         setGames([...games, game]);
-        console.log(game)
       }
     userGames();
   }, []);
