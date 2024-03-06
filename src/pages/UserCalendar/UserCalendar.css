@@ -1,38 +1,55 @@
 .UserCalendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1vmin;
-  }
-  
-  .UserCalendar > header {
-    grid-column: span 7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .UserCalendar > header > span {
-    flex: 1;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .UserCalendar > .dow {
-    height: 8vmin;
-    width: 8vmin;
-    text-align: center;
-    line-height: 8vmin;
-  }
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1vmin;
+  padding: 1vmin;
+}
 
-  .UserCalendar > footer {
-    grid-column: span 7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.UserCalendar>header {
+  grid-column: span 7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .UserCalendar > footer > span {
-    flex: 1;
-    text-align: center;
-    cursor: pointer;
-  }
+.UserCalendar>header>span {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.UserCalendar>.dow {
+  height: 8vmin;
+  width: 8vmin;
+  text-align: center;
+  line-height: 8vmin;
+}
+
+.UserCalendar>footer {
+  grid-column: span 7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.UserCalendar>footer>span {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.UserCalendar footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.UserCalendar footer a {
+  color: #f57f14;
+  text-decoration: none;
+  background-color: #2e3135;
+  padding: 2vmin;
+  border-radius: 2vmin;
+}

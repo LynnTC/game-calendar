@@ -9,7 +9,7 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav className='cyber-glitch-0'>
+    <nav>
       <div className="left-links">
         <Link to="/">Home</Link>
         &nbsp;&nbsp;

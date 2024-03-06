@@ -71,6 +71,7 @@ export default function Calendar({ tasks }) {
   }
 
   return (
+    <>
     <section className="Calendar">
       <header className="flex-ctr-ctr">
         <span onClick={handlePrevMo}>&#x21e6;</span>
@@ -88,5 +89,7 @@ export default function Calendar({ tasks }) {
       <div className="flex-ctr-ctr">Saturday</div>
       {calDays}
     </section>
+    <a class="rawglink" href="https://rawg.io/" target="_blank" rel="noopener noreferrer">Information from rawg.io API</a>
+    </>
   );
 }

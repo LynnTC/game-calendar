@@ -1,10 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import * as gamesAPI from '../../utilities/games-api';
 import './CalDay.css';
 
 export default function CalDay({ date, isToday, gameData }) {
-  const navigate = useNavigate();
 
   const releaseData = gameData && gameData.results
     ? gameData.results.find((result) => {
@@ -30,12 +28,12 @@ export default function CalDay({ date, isToday, gameData }) {
         backgroundImage: backgroundImage,
       }}
     >
-      <span style={{ position: 'absolute', top: 0, left: 10 }}>
+      <span style={{ position: 'absolute', top: 5, left: 10 }}>
         {date.getDate()}
       </span>
       {releaseData && (
         <div className="game-info">
-          <button onClick={(evt) => handleAddToUserCal(evt, releaseData)}>+</button>
+          <button onClick={(evt) => handleAddToUserCal(evt, releaseData)} style={{ position: 'absolute', top: 0, right: 15, fontSize: 30 }}>+</button>
           <h3>{releaseData.name}</h3>
         </div>
       )}

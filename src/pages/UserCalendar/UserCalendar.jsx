@@ -76,13 +76,13 @@ export default function UserCalendar({ tasks }) {
         </span>
         <span onClick={handleNextMo}>&#x21e8;</span>
       </header>
-      <div className="flex-ctr-ctr">Su</div>
-      <div className="flex-ctr-ctr">Mo</div>
-      <div className="flex-ctr-ctr">Tu</div>
-      <div className="flex-ctr-ctr">We</div>
-      <div className="flex-ctr-ctr">Th</div>
-      <div className="flex-ctr-ctr">Fr</div>
-      <div className="flex-ctr-ctr">Sa</div>
+      <div className="flex-ctr-ctr">Sunday</div>
+      <div className="flex-ctr-ctr">Monday</div>
+      <div className="flex-ctr-ctr">Tuesday</div>
+      <div className="flex-ctr-ctr">Wednesday</div>
+      <div className="flex-ctr-ctr">Thursday</div>
+      <div className="flex-ctr-ctr">Friday</div>
+      <div className="flex-ctr-ctr">Saturday</div>
       {calDays}
       <footer>
         <Link to="/gameform">Add Game To Your Calendar</Link>

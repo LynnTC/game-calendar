@@ -16,8 +16,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2f404d;
-  padding: 2vmin;
+  background-color: #426faf;
   height: 100vh;
 }
 
@@ -113,8 +112,6 @@ input:focus {
 }
 
 button, a.button {
-  margin: 1vmin;
-  padding: 1vmin;
   color: var(--white);
   background-color: var(--orange);
   font-size: 2vmin;

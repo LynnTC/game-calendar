@@ -3,20 +3,18 @@
     align-items: center;
     justify-content: center;
     height: 12vmin;
-    background-color: #3d898d;
+    background-color: #2e3135;
     border-radius: 1vmin;
-    text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white;
+    text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
   }
   
   .CalDay.today {
-    border: 0.5vmin solid #e2dddf;
+    border: 0.5vmin solid #f57f14
   }
   
 .CalDay button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 1rem;
+  height: 0.2rem;
   width: 1rem;
   margin: 0;
+  text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as gamesAPI from '../../utilities/games-api';
+import './GameDetail.css';
 
 export default function GameDetail() {
   const [game, setGame] = useState(null);
@@ -25,6 +26,8 @@ export default function GameDetail() {
   return (
     <div>
       <h2>{game.name}</h2>
+      <p>Release Date: {game.releaseDate}</p>
+      <img className="gameart" src={`${game.background.url}`} alt="" />
     </div>
   );
 }

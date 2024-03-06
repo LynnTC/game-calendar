@@ -2,12 +2,12 @@
 
 nav {
     height: 5vmin;
-    background-color: #85edb9;
-    border-radius: 1vmin;
+    background-color: #f57f14;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1vmin; 
+    color: #426faf;
   }
   
   nav .left-links {
@@ -18,8 +18,7 @@ nav {
   nav .left-links a {
     margin-right: 10px;
     text-decoration: none;
-    color: black;
-    font-size: 1.5vmin; 
+    font-size: 2vmin; 
   }
   
   nav .right-links {
@@ -29,7 +28,7 @@ nav {
   
   nav .right-links span {
     margin-right: 10px;
-    font-size: 1.5vmin; 
+    font-size: 2vmin; 
   }
   
   nav .right-links a.logout:hover,
@@ -43,9 +42,8 @@ nav {
     color: #cc4444;
   }
 
-
   /*description: good for images. Effect of a dying flickering screen. Sometimes bright, sometimes dark.*/
-.cyber-glitch-0
+/* .cyber-glitch-0
 {
     animation: cyber-glitch-0 10s linear infinite;
 }
@@ -67,4 +65,4 @@ nav {
     35% {filter: blur(.10rem) brightness(40%) contrast(100%);}
     36% {filter: blur(0) brightness(100%) contrast(100%);}
     100% {filter: blur(0) brightness(100%) contrast(100%);}
-}
+} */
