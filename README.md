@@ -19,6 +19,7 @@ Explore the latest and upcoming video game releases with our intuitive calendar.
 # Getting Started
 
 [Click to View Project Planning](https://trello.com/b/2021atgQ/game-calendar)
+
 [Click to View Site](https://game-calendar-ltc-4199d19617ef.herokuapp.com/)
 
 # Next Steps
