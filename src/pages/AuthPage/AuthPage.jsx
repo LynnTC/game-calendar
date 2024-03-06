@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import './AuthPage.css'
 
 export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
@@ -15,7 +16,7 @@ export default function AuthPage({ setUser }) {
   return (
     <main>
       <h1>Sign Up or Login to Begin</h1>
-      <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
+      <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Click To Log In To Existing User' : 'Click To Sign Up As A New User'}</button>
       { showSignUp ?
           <SignUpForm setUser={handleSetUser} />
           :
