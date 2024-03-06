@@ -45,7 +45,6 @@ export default function GameForm() {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div>
         <label>Game Name</label>
         <input
           name="name"
@@ -54,9 +53,7 @@ export default function GameForm() {
           placeholder="Game Name"
           required
         />
-      </div>
 
-      <div>
         <label>Game Description</label>
         <input
           name="description"
@@ -64,17 +61,24 @@ export default function GameForm() {
           onChange={handleChange}
           placeholder="Game Description"
         />
-      </div>
-      <div>
+
         <label>Release Date</label>
         <DatePicker
           selected={Game.releaseDate}
           onChange={handleDateChange}
           dateFormat="MM/dd/yyyy"
         />
-      </div>
 
-      <div>
+          <label>Background URL</label>
+          <input
+            type="text"
+            name="background"
+            value={Game.background.url}
+            onChange={handleChange}
+            placeholder="Enter image URL"
+          />
+
+      {/* <div>
         <label>
           Upload Background Image?
           <input
@@ -107,7 +111,7 @@ export default function GameForm() {
             placeholder="Enter image URL"
           />
         </div>
-      )}
+      )} */}
       <button type="submit">Add Game</button>
     </form>
   );

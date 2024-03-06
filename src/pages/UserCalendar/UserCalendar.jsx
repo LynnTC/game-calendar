@@ -33,7 +33,7 @@ export default function UserCalendar({ tasks }) {
         setGames([...games, game]);
       }
     userGames();
-  }, [games]);
+  }, []);
 
   const calDays = new Array(numCalDays).fill().map((_, idx) => {
     const date = new Date(calYr, calMo, idx + 1);
