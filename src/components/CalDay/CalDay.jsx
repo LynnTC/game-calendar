@@ -1,11 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import * as gamesAPI from '../../utilities/games-api';
 import './CalDay.css';
 
 export default function CalDay({ date, isToday, gameData }) {
-  function handleDayClick(date) {
-    alert(date);
-  }
-
+  const navigate = useNavigate();
+  const handleDayClick = () => {
+    if (gameData) {
+      navigate(`/game/${gameData._id}`);
+    }
+  };
 
   const releaseData = gameData && gameData.results
     ? gameData.results.find((result) => {
@@ -14,8 +18,13 @@ export default function CalDay({ date, isToday, gameData }) {
       return releaseDate === currentDate;
     })
     : null;
-
+    
   const backgroundImage = releaseData ? `url(${releaseData.background_image})` : 'none';
+
+  const handleAddToUserCal = (evt, releaseData) =>{
+    evt.stopPropagation()
+    gamesAPI.addGameToUserCal(releaseData);
+  };
 
   return (
     <article
@@ -32,6 +41,7 @@ export default function CalDay({ date, isToday, gameData }) {
       </span>
       {releaseData && (
         <div className="game-info">
+          <button onClick={(evt) => handleAddToUserCal(evt, releaseData)}>+</button>
           <h3>{releaseData.name}</h3>
         </div>
       )}

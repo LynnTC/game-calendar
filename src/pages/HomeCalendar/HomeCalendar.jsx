@@ -27,7 +27,6 @@ export default function Calendar({ tasks }) {
         }
         const gameData = await gameResponse.json();
         setGameData(gameData);
-        console.log(gameData);
       } catch (error) {
         console.error('Error:', error);
       }

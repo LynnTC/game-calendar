@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
       if (!GAMEAPIKEY) {
         throw new Error('API key is not available');
       }
-  
       res.json({ apiKey: GAMEAPIKEY });
     } catch (error) {
       console.error('Error fetching API key:', error);

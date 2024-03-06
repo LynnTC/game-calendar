@@ -1,10 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './UserCalDay.css';
 
 export default function CalDay({ date, isToday, games }) {
-  function handleDayClick(date) {
-    alert(date);
-  }
+  const navigate = useNavigate();
 
   const gameData = games && games[0]
     ? games[0].find((result) => {
@@ -16,16 +15,22 @@ export default function CalDay({ date, isToday, games }) {
 
   const backgroundImage = gameData?.background?.url || 'none';
 
+  const handleDayClick = () => {
+    if (gameData) {
+      navigate(`/game/${gameData._id}`);
+    }
+  };
+
   return (
     <article
       className={`UserCalDay${isToday ? ' today' : ''}`}
       style={{
-        gridColumnStart: date.getDate() === 1 && date.getDay() + 1,
+        gridColumnStart: date.getDate() === 1 ? date.getDay() + 1 : 'auto',
         position: 'relative',
         backgroundImage: backgroundImage !== 'none' ? `url(${backgroundImage})` : 'none',
         backgroundSize: 'cover',
       }}
-      onClick={() => handleDayClick(date)}
+      onClick={handleDayClick}
     >
       <span style={{ position: 'absolute', top: 0, left: 10 }}>
         {date.getDate()}

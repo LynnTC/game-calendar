@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import "./GameForm.css"
 import * as gamesAPI from '../../utilities/games-api';
 
 export default function GameForm() {
+  const navigate = useNavigate();
+
   const [Game, setGame] = useState({
     name: '',
     description: '',
@@ -20,7 +22,7 @@ export default function GameForm() {
     evt.preventDefault();
     try {
       await gamesAPI.createGame(Game);
-      return redirect('/calendar');
+      navigate('/calendar');
     } catch (error) {
       console.error('Error creating game:', error);
     }
@@ -36,13 +38,11 @@ export default function GameForm() {
     if (type === 'checkbox') {
       setGame({ ...Game, [name]: checked, background: { url: '', file: '' } });
     } else if (name === 'background') {
-      // Handle background separately
       setGame({ ...Game, background: { ...Game.background, url: value } });
     } else {
       setGame({ ...Game, [name]: value });
     }
   }
-
   return (
     <form onSubmit={handleSubmit}>
       <div>

@@ -8,7 +8,9 @@ const Game = require('../../models/game');
 
 // POST /api/games (create a user - sign up)
 router.post('/', gamesCtrl.create);
+router.post('/user', gamesCtrl.addToUserCal);
 router.get('/', gamesCtrl.getAll)
+router.get('/:gameId', gamesCtrl.getById)
 
 
 module.exports = router;
