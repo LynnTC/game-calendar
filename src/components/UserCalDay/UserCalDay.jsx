@@ -50,10 +50,6 @@ export default function CalDay({ date, isToday, games }) {
           {removeFromCalendar && <p>{gameData.name} removed from your calendar!</p>}
         </div>
       )}
-      {/* //   <div className="game-info">
-      //     <h3>{gameData.name}</h3>
-      //   </div>
-      // )} */}
     </article>
   );
 }
