@@ -13,8 +13,9 @@
   }
   
   .UserCalDay button {
-    height: 3vmin;
-    width: 1rem;
     margin: 0;
+    color:#2e3135;
     text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
+    background: none; 
+    padding: 0;
   }

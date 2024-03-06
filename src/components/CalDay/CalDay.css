@@ -1,20 +1,21 @@
 .CalDay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 12vmin;
-    background-color: #2e3135;
-    border-radius: 1vmin;
-    text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
-  }
-  
-  .CalDay.today {
-    border: 0.5vmin solid #f57f14
-  }
-  
-.CalDay button {
-  height: 0.2rem;
-  width: 1rem;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12vmin;
+  background-color: #2e3135;
+  border-radius: 1vmin;
   text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
+}
+
+.CalDay.today {
+  border: 0.5vmin solid #f57f14
+}
+
+.CalDay button {
+  margin: 0;
+  color:#2e3135;
+  text-shadow: 1px 1px 0 #f57f14, -1px -1px 0 #f57f14, 1px -1px 0 #f57f14, -1px 1px 0 #f57f14;
+  background: none; 
+  padding: 0;
 }
